@@ -1,3 +1,8 @@
+// Time complexity -->
+
+// Best , average case tc --> O(n log n)
+// worst case tc --> O(n) , cause, in case your all nodes value present in ascending / descending order then the searching tc is O(n) , ex- [10,20,30] / [10,9,8] , in case this situation arrive , we can use AVL tree for balancing tree
+
 class Node {
   constructor(value) {
     this.value = value;
@@ -221,6 +226,38 @@ console.log(bst.contains(1));
 // bst.deleteNodeHelper(bst.root, 20);
 bst.deleteNodeHelper(bst.root, 1);
 console.log(bst.bfs(), "----> bfs");
+
+const deleteNode = function (root, key) {
+  if (!root) return null;
+
+  if (key < root.val) {
+    root.left = deleteNode(root.left, key);
+    return root;
+  } else if (key > root.val) {
+    root.right = deleteNode(root.right, key);
+    return root;
+  } else {
+    // check if leaf node
+    if (root.val === null && root.val === null) {
+      return null;
+    }
+    // if node contain only one child
+    else if (root.left === null) return root.right;
+    else if (root.right === null) return root.left;
+
+    // if node contain two child
+    // inorder successor --> The smallest element of delete nodes right subtree ;
+    let cur_node = root.right;
+
+    while (cur_node.left !== null) {
+      cur_node = cur_node.left;
+    }
+    root.val = cur_node.val; // replace delete node with  right most small node
+    // delete right most small node
+    root.right = deleteNode(root.right, cur_node.val);
+    return root;
+  }
+};
 
 // --------------------------------------------------------------------
 
