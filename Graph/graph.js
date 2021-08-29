@@ -82,7 +82,7 @@ class Graph {
       let getQueueElement = q.dequeue();
 
       // print vertex / nodes
-      console.log(getQueueElement);
+      console.log(getQueueElement, "---> bfs");
 
       // get the adjacent list for current vertex
       let get_List = this.Adjlist.get(getQueueElement);
@@ -95,6 +95,24 @@ class Graph {
           q.enqueue(i);
         }
       }
+    }
+  }
+
+  // DFS (depth First Search )
+  dfs(startingNode) {
+    let visited = {};
+    this.DFSUtil(startingNode, visited);
+  }
+  // Recursive function which process and explore
+  // all the adjacent vertex of the vertex with which it is called
+  DFSUtil(vert, visited) {
+    visited[vert] = true;
+    console.log(vert, "---> dfs");
+
+    let get_lists = this.Adjlist.get(vert);
+
+    for (let i of get_lists) {
+      if (!visited[i]) this.DFSUtil(i, visited);
     }
   }
 }
@@ -144,6 +162,7 @@ g.addEdge("F", "C", 1);
 // print graph
 g.printGraph();
 g.bfs("A");
+g.dfs("A");
 /**   
           (A)----(B)<---------------Vertex / Node
          /   \      \<------Edge
