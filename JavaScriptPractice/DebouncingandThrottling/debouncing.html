@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .listOfData {
+            display: flex;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .newcreated_div:not(:first-child) {
+            margin-left: 20px;
+        }
+
+        input {
+            margin: 20px;
+            padding: 5px 10px;
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container" style="width: 100% ; height: 100vh;">
+        <p style="text-align: center;">Link : <a
+                href="https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript">
+                -https://www.telerik.com/blogs/debouncing-and-throttling-in-javascript</a></p>
+        <h1 style="text-align: center;">Debouncing api call</h1>
+        <hr>
+        <div style="text-align: center;">
+            <p id="cound_btnclick" style="padding-left: 10px; font-size: 16px; color: red;"></p>
+            <input type="text" id="input" value="" placeholder="search your recipe">
+
+        </div>
+
+        <div id="userData" class="listOfData">
+
+        </div>
+    </div>
+
+
+
+    <script src="debouncing.js"></script>
+</body>
+
+</html>
