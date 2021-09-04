@@ -73,4 +73,6 @@ function rearrange(arr, l, r) {
 }
 
 let arr = [-12, 11, -13, -5, 6, -7, 5, -3, -6, 0, -4];
-rearrange(arr, 0, arr.length - 1);
+// rearrange(arr, 0, arr.length - 1);
+
+
