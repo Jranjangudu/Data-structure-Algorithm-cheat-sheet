@@ -5,34 +5,32 @@ const userDiv = document.getElementById("userData");
 const cound_btnclick = document.getElementById("cound_btnclick");
 // fetch Api
 
-function createelement(data) {
-  let para = document.createElement("p");
-  para.innerHTML = data;
-  return para;
-}
-
-function appendchild(parent, children) {
-  children.forEach((element) => {
-    let new_node = createelement(element);
-    parent.appendChild(new_node);
-  });
-}
 // This represents a very heavy method which takes a lot of time to execute
 let apicallCount = 1;
 function makeAPICall() {
+  //
+  let html = "";
+
   apicallCount += 1;
-  fetch("https://jsonplaceholder.typicode.com/users")
+  fetch("https://jsonplaceholder.typicode.com/users", {
+    method: "GET",
+  })
     .then((res) => {
       return res.json();
     })
     .then((data) => {
       data.forEach((element) => {
-        let newnode = document.createElement("div");
-        newnode.classList = "newcreated_div";
-        let item = [element.id, element.name, element.email];
-        appendchild(newnode, item);
-        userDiv.appendChild(newnode);
+        let htmlSegment = `
+                         <div class="user">
+                            <p> ID: ${element.id} </p>
+                            <p> Name: ${element.name} </p>
+                            <p> Email ID: ${element.email} </p>
+                         </div>
+        `;
+        html += htmlSegment;
       });
+
+      userDiv.innerHTML = html;
     })
     .catch((err) => {
       console.log(err);
@@ -61,3 +59,24 @@ api_btn.addEventListener("click", () => {
   console.log("count button click");
   throttleFunction(makeAPICall, 500);
 });
+
+// async function handlebtn() {
+//   let res = await fetch("data.json", {
+//     method: "GET",
+//   });
+//   let data = await res.json();
+//   let html = "";
+//   data.forEach((element) => {
+//     let htmlSegment = `<div class="user">
+
+//                             <img src=${element.url}  width="100px" />
+//                             <p>${element.id} ${element.title}</p>
+//                         </div>`;
+
+//     html += htmlSegment;
+//   });
+
+//   let node = document.getElementById("userdata");
+//   // console.log(html);
+//   node.innerHTML = html;
+// }

@@ -4,15 +4,12 @@ const userDiv = document.getElementById("userData");
 const get_input_data = document.getElementById("input");
 const cound_btnclick = document.getElementById("cound_btnclick");
 
-function appendchild(parent, children) {
-  children.forEach((element) => {
-    parent.appendChild(element);
-  });
-}
-
 // This represents a very heavy method. Which takes a lot of time to execute
 let apicallCount = 1;
 function makeAPICall(text) {
+  //
+  let html = "";
+
   apicallCount += 1;
   fetch(
     `https://api.edamam.com/search?q=${text}&app_id=16ad8eb2&app_key=11c514b334846bac22e3a9697a53f51e`
@@ -22,18 +19,15 @@ function makeAPICall(text) {
     })
     .then((data) => {
       data.hits.forEach((element) => {
-        let newnode = document.createElement("div");
-        newnode.classList = "newcreated_div";
-
-        let image = document.createElement("img");
-        image.setAttribute("src", element.recipe.image);
-
-        let para = document.createElement("p");
-        para.innerHTML = element.recipe.label;
-        let item = [image, para];
-        appendchild(newnode, item);
-        userDiv.appendChild(newnode);
+        let htmlSegment = `
+                         <div class="user">
+                            <img src=${element.recipe.image} />
+                            <p>  ${element.recipe.label} </p>
+                         </div>
+        `;
+        html += htmlSegment;
       });
+      userDiv.innerHTML = html;
     })
     .catch((err) => {
       console.log(err);
