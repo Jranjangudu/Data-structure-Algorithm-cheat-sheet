@@ -35,7 +35,7 @@
 
 Example
 
-<code>
+```
  1. var a =10;
 
 {
@@ -55,4 +55,4 @@ let a =20 ; // 0/p = 20 { here a store in block scope and "a" is the "shadowing"
 }
 
 console.log(a); // o/p = 10
-</code>
+```
