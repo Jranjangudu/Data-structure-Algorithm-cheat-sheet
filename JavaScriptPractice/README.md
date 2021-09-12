@@ -1,4 +1,4 @@
-### 1. Lexical Enviranment
+# 1. Lexical Enviranment
 
 <!-- <hr/> -->
 
@@ -8,7 +8,7 @@
 
 <!-- <hr/> -->
 
-### 2. Scope Chain
+# 2. Scope Chain
 
 -> When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
 
@@ -18,7 +18,7 @@
 
 <!-- <hr/> -->
 
-### let and const
+# let and const
 
 -> let and const variable store in a shaparate memory zone is called { script zone }
 
@@ -28,29 +28,36 @@
 
 <!-- <hr/> -->
 
-### Block scope and shadowing
+# Block scope and shadowing
 
 -> The grouping of multiple statement inside Curly brases { } , this is known as block
 -> let and const are block scope;
 
-## Example
+### Example
 
-# 1. var a =10;
+### 1. var a =10;
 
-# {
+### {
 
-# var a =20; <-- this is "shadow" of top of the ' a '
+### var a =20; <-- this is "shadow" of top of the ' a '
 
-# }
+### }
 
-# console.log(a); o/p = 20#
+### console.log(a); o/p = 20#
 
-# 2. let a =10;
+### 2. let a =10;
 
-# {
+### {
 
-# let a =20 ; 0/p = 20 { here a store in block scope and "a" is the "shadowing" of the top of "a" }
+### let a =20 ; 0/p = 20 { here a store in block scope and "a" is the "shadowing" of the top of "a" }
 
-# }
+### }
 
-# console.log(a); o/p = 10
+### console.log(a); o/p = 10
+
+<code>
+ let x =20
+ function a(){
+     console.log(x)
+ }
+</code>
