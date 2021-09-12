@@ -18,7 +18,7 @@
 
 <!-- <hr/> -->
 
-# let and const
+# 3. let and const
 
 -> let and const variable store in a shaparate memory zone is called { script zone }
 
@@ -28,7 +28,7 @@
 
 <!-- <hr/> -->
 
-# Block scope and shadowing
+# 4. Block scope and shadowing
 
 -> The grouping of multiple statement inside Curly brases { } , this is known as block
 -> let and const are block scope;
