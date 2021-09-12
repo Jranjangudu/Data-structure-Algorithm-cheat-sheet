@@ -33,31 +33,26 @@
 -> The grouping of multiple statement inside Curly brases { } , this is known as block
 -> let and const are block scope;
 
-### Example
-
-### 1. var a =10;
-
-### {
-
-### var a =20; <-- this is "shadow" of top of the ' a '
-
-### }
-
-### console.log(a); o/p = 20#
-
-### 2. let a =10;
-
-### {
-
-### let a =20 ; 0/p = 20 { here a store in block scope and "a" is the "shadowing" of the top of "a" }
-
-### }
-
-### console.log(a); o/p = 10
+Example
 
 <code>
- let x =20
- function a(){
-     console.log(x)
- }
+ 1. var a =10;
+
+{
+
+var a =20; // <-- this is "shadow" of top of the ' a '
+
+}
+
+console.log(a); // o/p = 20#
+
+2.  let a =10;
+
+{
+
+let a =20 ; // 0/p = 20 { here a store in block scope and "a" is the "shadowing" of the top of "a" }
+
+}
+
+console.log(a); // o/p = 10
 </code>
