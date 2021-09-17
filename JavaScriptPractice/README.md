@@ -2,7 +2,7 @@
 
 <!-- <hr/> -->
 
--> Lexical enviranment is created , when execution context is created .!
+- Lexical enviranment is created , when execution context is created .!
 
 - Lexical ==> local memory + ref. to the Lexical enviranment of parent
 
@@ -10,28 +10,28 @@
 
 # 2. Scope Chain
 
--> When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
+- When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
 
--> If it’s still could not find the variable, it will either implicitly declare the variable in the global scope (if not in strict mode) or return an error.
+- If it’s still could not find the variable, it will either implicitly declare the variable in the global scope (if not in strict mode) or return an error.
 
--> so this process is call scope chain
+- so this process is call scope chain
 
 <!-- <hr/> -->
 
 # 3. let and const
 
--> let and const variable store in a shaparate memory zone is called { script zone }
+- let and const variable store in a shaparate memory zone is called { script zone }
 
--> let and const declaration are hoisted , but in different way ! , these are hoisted in temporal dead zone
+- let and const declaration are hoisted , but in different way ! , these are hoisted in temporal dead zone
 
--> when we try to access a variable in temporal zone , it give ref. error , until some value not assign to this variable ;
+- when we try to access a variable in temporal zone , it give ref. error , until some value not assign to this variable ;
 
 <!-- <hr/> -->
 
 # 4. Block scope and shadowing
 
--> The grouping of multiple statement inside Curly brases { } , this is known as block
--> let and const are block scope;
+- The grouping of multiple statement inside Curly brases { } , this is known as block
+- let and const are block scope;
 
 Example
 
@@ -55,4 +55,33 @@ let a =20 ; // 0/p = 20 { here a store in block scope and "a" is the "shadowing"
 }
 
 console.log(a); // o/p = 10
+```
+
+# 5. Callback function
+
+- Any function that is passed as an argument is called a callback function ;
+- A callback is a function that is to be executed after another function has finished executing -- hence the name 'callback'
+
+Example:
+
+```
+    function a(arg){
+        console.log(" a() func executed ")
+        arg()
+    }
+
+    function b(){
+        console.log(" b() func executed ")
+    }
+
+    // invoke a() and passing b() as argument;
+
+    a(b)
+
+
+    [
+     - output :-
+        a() func executed
+        b() func executed
+    ]
 ```
