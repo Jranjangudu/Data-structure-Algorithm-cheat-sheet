@@ -1,4 +1,4 @@
-# 1. Lexical Enviranment
+## 1. Lexical Enviranment
 
 <!-- <hr/> -->
 
@@ -8,7 +8,7 @@
 
 <!-- <hr/> -->
 
-# 2. Scope Chain
+## 2. Scope Chain
 
 - When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
 
@@ -18,7 +18,7 @@
 
 <!-- <hr/> -->
 
-# 3. let and const
+## 3. let and const
 
 - let and const variable store in a shaparate memory zone is called { script zone }
 
@@ -28,7 +28,7 @@
 
 <!-- <hr/> -->
 
-# 4. Block scope and shadowing
+## 4. Block scope and shadowing
 
 - The grouping of multiple statement inside Curly brases { } , this is known as block
 - let and const are block scope;
@@ -57,7 +57,7 @@ let a =20 ; // 0/p = 20 { here a store in block scope and "a" is the "shadowing"
 console.log(a); // o/p = 10
 ```
 
-# 5. Callback function
+## 5. Callback function
 
 - Any function that is passed as an argument is called a callback function ;
 - A callback is a function that is to be executed after another function has finished executing -- hence the name 'callback'
@@ -84,4 +84,21 @@ Example:
         a() func executed
         b() func executed
     ]
+```
+
+## 6. [defer & async in script tag] :-
+
+```
+The defer attribute is a boolean attribute.
+
+If the defer attribute is set, it specifies that the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing.
+
+Note: The defer attribute is only for external scripts (should only be used if the src attribute is present).
+
+Note: There are several ways an external script can be executed:
+
+If async is present: The script is downloaded in parallel to parsing the page, and executed as soon as it is available (before parsing completes)
+If defer is present (and not async): The script is downloaded in parallel to parsing the page, and executed after the page has finished parsing
+If neither async or defer is present: The script is downloaded and executed immediately, blocking parsing until the script is completed
+
 ```
