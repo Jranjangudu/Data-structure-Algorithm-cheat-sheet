@@ -90,6 +90,10 @@ Example:
 
 ```
 The defer attribute is a boolean attribute.
+[
+    1. <script defer src=""></script>
+    2. <script async src=""></script>
+]
 
 If the defer attribute is set, it specifies that the script is downloaded in parallel to parsing the page, and executed after the page has finished parsing.
 
