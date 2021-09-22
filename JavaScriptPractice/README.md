@@ -10,6 +10,12 @@
 
 ## 2. Scope Chain
 
+There are three types of scopes in JS:
+
+- Global Scope
+- Local or Function Scope
+- Block Scope
+
 - When a variable is used in JavaScript, the JavaScript engine will try to find the variable’s value in the current scope. If it could not find the variable, it will look into the outer scope and will continue to do so until it finds the variable or reaches global scope.
 
 - If it’s still could not find the variable, it will either implicitly declare the variable in the global scope (if not in strict mode) or return an error.
@@ -32,6 +38,10 @@
 
 - The grouping of multiple statement inside Curly brases { } , this is known as block
 - let and const are block scope;
+
+- Block scope is related to the variables declared using let and const. Variables declared with var do not have block scope.
+
+- Block scope tells us that any variable declared inside a block { }, can be accessed only inside that block and cannot be accessed outside of it.
 
 Example
 

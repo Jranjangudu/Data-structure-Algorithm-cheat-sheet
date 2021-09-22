@@ -161,8 +161,26 @@ g.addEdge("F", "C", 1);
 
 // print graph
 g.printGraph();
+// A --> D E B
+// B --> A C
+// C --> B E F
+// D --> A E
+// E --> A D F C
+// F --> E C
 g.bfs("A");
+// A ---> bfs
+// D ---> bfs
+// E ---> bfs
+// B ---> bfs
+// F ---> bfs
+// C ---> bfs
 g.dfs("A");
+// A ---> dfs
+// D ---> dfs
+// E ---> dfs
+// F ---> dfs
+// C ---> dfs
+// B ---> dfs
 /**   
           (A)----(B)<---------------Vertex / Node
          /   \      \<------Edge
