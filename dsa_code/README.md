@@ -45,3 +45,30 @@ console.log([...new Set(getIntra)]) //[4, 1] <-Set() helps to Remove duplicate v
 console.log(getIntra) //[4, 1, 4]
 
 ```
+
+## [Pascal's Triangle](https://leetcode.com/problems/pascals-triangle/)
+
+```
+let size = 5;
+function generate(n){
+  let arr = [];
+  for(let i = 0 ; i < n ; i++){
+    arr[i] = [];
+    arr[i][0] = 1;
+    for(let j = 1; j <=i ; j++){
+      j < i ? arr[i][j] = arr[i-1][j-1]+arr[i-1][j] : arr[i][j] = 1
+    }
+  }
+  return arr;
+}
+console.log(generate(size));
+
+. first assign a empty array in every index
+. Then add 1 inside  empty array [0] index of every index
+. Here i use two loop
+. Inside  j loop , you check if j is graterthan  i , then add one in last of index
+. if i is grater then j , then you access the privious array , and add the [i , j] value then assign in present array !!
+Output:-
+[[1],[1, 1],[1, 2, 1],[1, 3, 3, 1],[1, 4, 6, 4, 1]]
+
+```
