@@ -19,7 +19,7 @@ disp.apply(); // print something..
 // Another example
 
 let persone1 = {
-  name: "Reshma",
+  name: "simran",
   battery: 70, // 70%
   charge_battery: function () {
     // if we invoke / call this charge_battery function , this update the battery 70% to 100%
@@ -32,7 +32,7 @@ let persone1 = {
 let persone2 = {
   name: "Guddu",
   battery: 30, //30%
-}; // if i want to update/modify my battery value , i need charge_battery() function , but instance writting again tha same code , i just barrow the method to Reshma by the help of call() mathod !!
+}; // if i want to update/modify my battery value , i need charge_battery() function , but instance writting again tha same code , i just barrow the method to simran by the help of call() mathod !!
 
 // here i barrow charge_battery() method
 persone1.charge_battery.call(persone2); // This line means you need charge_battery () method of person1 and used in persone2 object ;
@@ -41,7 +41,7 @@ console.log(persone1);
 console.log(persone2);
 // Output 👇
 // {
-//     name: 'Reshma',
+//     name: 'simran',
 //     battery: 70,
 //     charge_battery: [Function: charge_battery]
 //   }
@@ -54,7 +54,7 @@ console.log(persone1);
 console.log(persone2);
 // Output 👇
 // {
-//     name: 'Reshma',
+//     name: 'simran',
 //     battery: 70,
 //     charge_battery: [Function: charge_battery]
 //   }
