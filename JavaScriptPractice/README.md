@@ -45,25 +45,16 @@ There are three types of scopes in JS:
 
 Example
 
-```
+```javascript
  1. var a =10;
-
 {
-
 var a =20; // <-- this is "shadow" of top of the ' a '
-
 }
-
 console.log(a); // o/p = 20#
-
 2.  let a =10;
-
 {
-
 let a =20 ; // 0/p = 20 { here a store in block scope and "a" is the "shadowing" of the top of "a" }
-
 }
-
 console.log(a); // o/p = 10
 ```
 
@@ -74,7 +65,7 @@ console.log(a); // o/p = 10
 
 Example:
 
-```
+```javascript
     function a(arg){
         console.log(" a() func executed ")
         arg()
@@ -98,7 +89,7 @@ Example:
 
 ## 6. [defer & async in script tag] :-
 
-```
+```javascript
 The defer attribute is a boolean attribute.
 [
     1. <script defer src=""></script>
