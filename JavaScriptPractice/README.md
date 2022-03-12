@@ -61,6 +61,7 @@ console.log(a); // o/p = 10
 ## 5. Callback function
 
 - Any function that is passed as an argument is called a callback function ;
+- Callback can be Synchronous if they execute immediately or they can be asynchronous where they execute after some time passed
 - A callback is a function that is to be executed after another function has finished executing -- hence the name 'callback'
 
 Example:
