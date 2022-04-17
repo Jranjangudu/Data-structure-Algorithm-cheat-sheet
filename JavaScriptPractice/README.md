@@ -108,3 +108,101 @@ If defer is present (and not async): The script is downloaded in parallel to par
 If neither async or defer is present: The script is downloaded and executed immediately, blocking parsing until the script is completed
 
 ```
+
+## 6. [ Higher-Order Components] :-
+
+```javascript react
+import "./styles.css";
+import { useState } from "react";
+import FOCgreen from "./FOCgreen";
+export default function App() {
+  return (
+    <div className="App">
+      Implementing
+      <FOCred func={Increment} />
+      <FOCblue func={Increment} />
+      <FOCgreen func={Increment} />
+    </div>
+  );
+}
+// Higher-Order Components
+const FOCred = (props) => {
+  return (
+    <div style={{ backgroundColor: "#FF9933", padding: "2px" }}>
+      {" "}
+      <props.func />{" "}
+    </div>
+  );
+};
+const FOCblue = (props) => {
+  return (
+    <div style={{ backgroundColor: "white", padding: "2px" }}>
+      {" "}
+      <props.func />{" "}
+    </div>
+  );
+};
+
+const Increment = () => {
+  const [count, setCount] = useState(0);
+  return (
+    <>
+      <h1> count : {count}</h1>
+      <button onClick={() => setCount(count + 1)}>increment</button>
+    </>
+  );
+};
+```
+
+## . [shallow copy and deep copy] {https://www.geeksforgeeks.org/what-is-shallow-copy-and-deep-copy-in-javascript/}
+
+- Shallow Copy: it means two variable points to same memory location , when one variable modify it value it also changes the another variable , cause of same memory
+
+```javascript
+const arr = [10, 203, 40];
+const arr1 = arr;
+arr1[0] = 101;
+arr[1] = 2;
+console.log(arr, arr1); // [101, 2, 40] , [101, 2, 40]
+
+// object
+const obj = {
+  name: "simran",
+  age: 22,
+};
+
+const obj1 = obj;
+obj1.name = "jyoti";
+obj1.mobile = 20203846;
+console.log(obj, obj1);
+//{name: "jyoti", age: 22, mobile: 20203846} --- obj
+// {name: "jyoti", age: 22, mobile: 20203846} ---obj1
+```
+
+- deep Copy :- it means two variable points to different memory location , when one variable modify it value it don't changes the another variable , both variable point diff memory location
+
+```javascript
+const arr = [10, 203, 40];
+const arr1 = [...arr];
+arr1[0] = 101;
+arr[1] = 2;
+console.log(arr, arr1); //[10, 2, 40] , [101, 203, 40]
+
+// object
+const obj = {
+  name: "simran",
+  age: 22,
+};
+
+const obj1 = { ...obj };
+obj1.name = "jyoti";
+obj1.mobile = 20203846;
+console.log(obj, obj1);
+// {name: "simran", age: 22} --->  obj
+// {name: "jyoti", age: 22, mobile: 20203846} --->  obj1
+```
+
+## .[ Pure Component Vs useMemo ]
+
+Pure Component works in class Component , and usrMemo in functional component;
+, both are use to restricts the re-rendering when there is no use of re-rendering of the component , if state or props update then re-render alse stop re-rendering component
